@@ -92,8 +92,9 @@ jobs:
 
 | Feature | Free | With Token |
 |---------|------|------------|
-| Known malicious packages | Unlimited | Unlimited |
-| Threat feed database | Unlimited | Unlimited |
+| Cached scans | 50/day per repo | Unlimited |
+| Known malicious packages | Blocked | Blocked |
+| Threat feed database | Checked | Checked |
 | AI analysis of unknown packages | - | 100-10000/day |
 | PR comments | Yes | Yes |
 
