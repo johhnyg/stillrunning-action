@@ -1,5 +1,5 @@
-name: 'stillrunning Security Scan'
-description: 'Scan Python/Node.js dependencies for supply chain attacks'
+name: 'stillrunning Security Scan v2'
+description: 'Scan Python/Node.js dependencies AND imports for supply chain attacks'
 author: 'stillrunning.io'
 branding:
   icon: 'shield'
@@ -13,7 +13,15 @@ inputs:
   files:
     description: 'Dependency files to scan (comma-separated)'
     required: false
-    default: 'requirements.txt,requirements-dev.txt,package.json'
+    default: 'requirements.txt,requirements-dev.txt,package.json,pyproject.toml'
+  scan-imports:
+    description: 'Scan Python import statements in source files'
+    required: false
+    default: 'true'
+  python-paths:
+    description: 'Paths to scan for Python imports (comma-separated globs)'
+    required: false
+    default: '**/*.py'
   fail-on-dangerous:
     description: 'Fail the workflow if dangerous packages are found'
     required: false
@@ -26,6 +34,10 @@ inputs:
     description: 'Post results as a PR comment'
     required: false
     default: 'true'
+  verify-hashes:
+    description: 'Verify package hashes against PyPI registry'
+    required: false
+    default: 'true'
 
 outputs:
   result:
@@ -34,6 +46,10 @@ outputs:
     description: 'Number of dangerous packages found'
   suspicious-count:
     description: 'Number of suspicious packages found'
+  imports-scanned:
+    description: 'Number of import statements scanned'
+  packages-scanned:
+    description: 'Number of packages scanned'
 
 runs:
   using: 'docker'
@@ -44,3 +60,6 @@ runs:
     - ${{ inputs.fail-on-dangerous }}
     - ${{ inputs.fail-on-suspicious }}
     - ${{ inputs.comment-on-pr }}
+    - ${{ inputs.scan-imports }}
+    - ${{ inputs.python-paths }}
+    - ${{ inputs.verify-hashes }}
