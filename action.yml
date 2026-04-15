@@ -1,0 +1,46 @@
+name: 'stillrunning Security Scan'
+description: 'Scan Python/Node.js dependencies for supply chain attacks'
+author: 'stillrunning.io'
+branding:
+  icon: 'shield'
+  color: 'green'
+
+inputs:
+  token:
+    description: 'stillrunning.io API token (optional, enables AI scanning)'
+    required: false
+    default: ''
+  files:
+    description: 'Dependency files to scan (comma-separated)'
+    required: false
+    default: 'requirements.txt,requirements-dev.txt,package.json'
+  fail-on-dangerous:
+    description: 'Fail the workflow if dangerous packages are found'
+    required: false
+    default: 'true'
+  fail-on-suspicious:
+    description: 'Fail the workflow if suspicious packages are found'
+    required: false
+    default: 'false'
+  comment-on-pr:
+    description: 'Post results as a PR comment'
+    required: false
+    default: 'true'
+
+outputs:
+  result:
+    description: 'Scan result: pass, warn, or fail'
+  dangerous-count:
+    description: 'Number of dangerous packages found'
+  suspicious-count:
+    description: 'Number of suspicious packages found'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.files }}
+    - ${{ inputs.fail-on-dangerous }}
+    - ${{ inputs.fail-on-suspicious }}
+    - ${{ inputs.comment-on-pr }}
