@@ -1,5 +1,5 @@
-name: 'stillrunning Security Scan v2'
-description: 'Scan Python/Node.js dependencies AND imports for supply chain attacks'
+name: 'stillrunning Security Scan v3'
+description: 'Supply chain attack protection. Checks blocklist, detects yanked packages, AI scanning.'
 author: 'stillrunning.io'
 branding:
   icon: 'shield'
@@ -46,6 +46,10 @@ outputs:
     description: 'Number of dangerous packages found'
   suspicious-count:
     description: 'Number of suspicious packages found'
+  blocklist-hits:
+    description: 'Number of packages found in blocklist'
+  yanked-count:
+    description: 'Number of yanked packages found'
   imports-scanned:
     description: 'Number of import statements scanned'
   packages-scanned:
