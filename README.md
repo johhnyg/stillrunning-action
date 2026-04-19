@@ -3,8 +3,7 @@
 Supply chain attack protection for your CI/CD pipeline.
 
 [![stillrunning](https://stillrunning.io/badge/protected)](https://stillrunning.io)
-
-> **Note:** Use directly via `johhnyg/stillrunning-action@v3` (not yet listed in GitHub Marketplace)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-stillrunning-green?logo=github)](https://github.com/marketplace/actions/stillrunning-security-scan-v3)
 
 ## What's new in v3
 
