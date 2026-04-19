@@ -4,6 +4,8 @@ Supply chain attack protection for your CI/CD pipeline.
 
 [![stillrunning](https://stillrunning.io/badge/protected)](https://stillrunning.io)
 
+> **Note:** Use directly via `johhnyg/stillrunning-action@v3` (not yet listed in GitHub Marketplace)
+
 ## What's new in v3
 
 - **Blocklist check first** — fast, free, checks 100+ known malicious packages
