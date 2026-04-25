@@ -7,7 +7,7 @@ Supply chain attack protection for your CI/CD pipeline.
 
 ## What's new in v3
 
-- **Blocklist check first** — fast, free, checks 100+ known malicious packages
+- **Blocklist check first** — fast, free, checks 200,000+ verified malicious packages
 - **Yanked package detection** — fails if package was removed from PyPI
 - **Community reporting** — DANGEROUS packages automatically reported to protect others
 - **Clean summary output** — easy to read security report
@@ -83,7 +83,7 @@ stillrunning Security Report
 
 ## How it works
 
-1. **Blocklist check** (instant) — checks against 100+ known malicious packages
+1. **Blocklist check** (instant) — checks against 200,000+ verified malicious packages
 2. **Yanked detection** (fast) — verifies packages weren't removed from PyPI
 3. **AI scanning** (with token) — deep analysis of unknown packages
 
@@ -116,7 +116,7 @@ stillrunning Security Report
 
 - [stillrunning.io](https://stillrunning.io)
 - [Get API token](https://stillrunning.io/pricing)
-- [Threat Database](https://stillrunning.io/threats)
+- [Security Advisories](https://stillrunning.io/security-advisories)
 - [@bit_bot9000](https://x.com/bit_bot9000)
 
 ## License
