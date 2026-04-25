@@ -84,8 +84,21 @@ stillrunning Security Report
 ## How it works
 
 1. **Blocklist check** (instant) — checks against 200,000+ verified malicious packages
-2. **Yanked detection** (fast) — verifies packages weren't removed from PyPI
-3. **AI scanning** (with token) — deep analysis of unknown packages
+2. **Manifest parsing** — scans requirements.txt, pyproject.toml, Pipfile, package.json
+3. **Yanked detection** (fast) — verifies packages weren't removed from PyPI
+4. **AI scanning** (with token) — deep analysis of unknown packages
+
+## Threat sources
+
+Data from 8 threat intelligence sources:
+- OSV.dev (Google)
+- GitHub Security Advisories
+- npm registry
+- NVD (NIST)
+- CISA
+- Snyk
+- Socket.dev
+- Gemini Hunter (AI discovery)
 
 ## Examples
 
